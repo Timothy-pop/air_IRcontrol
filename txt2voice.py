@@ -18,10 +18,10 @@ def speak_shdlh():
     rate = engine.getProperty('rate')
 
     # 设置新的语音合成速度（这里将速度增加50%，您可以自行设置其他数值）
-    engine.setProperty('rate', rate * 0.5)
+    engine.setProperty('rate', rate * 0.7)
 
     # 要转换为语音的文本
-    text = "上山打老虎！"
+    text = "上山打老虎！老虎打不到，打到小松鼠！"
 
     # 使用引擎对象将文本转换为语音
     engine.say(text)

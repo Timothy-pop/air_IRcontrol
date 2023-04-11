@@ -1,16 +1,16 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import urllib.parse
 import webbrowser
-import path_identify
+import path_identify as pif
 
-url = "https://y.qq.com/"
+# url = "https://y.qq.com/"
 
 class MyHandler(BaseHTTPRequestHandler):
     def do_GET(self):
         path = self.path.split('?')[0]  # 获取请求路径，去掉参数部分
         params = urllib.parse.parse_qs(urllib.parse.urlparse(self.path).query)  # 解析参数部分，获取请求参数
         # print(f"Received command: {path}, params: {params}")
-        path_identify.path_switch(path) #判断html指令中的操作，并执行执行
+        pif.path_switch(path) #判断html指令中的操作，并执行执行
         # path = ''
         self.send_response(200)
         self.end_headers()
